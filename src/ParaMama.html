@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PARA MAMÁ</title>
+    <style>
+        body {
+            margin: 0;
+            height: 90vh;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url("image.png");
+            font-family: 'Arial Black', sans-serif;
+            overflow: hidden;
+        }
+
+        #fondo{
+            height: 400px;
+            background-image: url('family.jpg');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        #inviteButton {
+            padding: 10px 20px;
+            font-size: 20px;
+            color: #fff;
+            background-color: #ff69b4;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #message {
+            display: none;
+            font-size: 24px;
+            color: #bb44bbda;
+            background-color: darkkhaki;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .confetti {
+            position: fixed;
+            top: -10px;
+            width: 10px;
+            height: 10px;
+            background-color: #ff69b4;
+            opacity: 0.6;
+            border-radius: 50%;
+            animation: confetti-animation 3s linear infinite;
+        }
+
+        @keyframes confetti-animation {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+            100% { transform: translateY(1000px) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <button id="inviteButton">PARA MAMÁ<br><br><span style=color:blue>PRESIONA ACÁ</span></button>
+    <article id="fondo">
+        <div id="message">
+            <p>!!FELIZ DÍA A LA MEJOR MAMÁ DEL MUNDO<br>TE AMAMOS... TU FAMILIA¡¡</p>
+            <a href="https://www.youtube.com/watch?v=vJ-fl5OeJKQ&pp=ygUVZmVsaXogZGlhIGRlIGxhIG1hZHJl">TOCA ACÁ</a>
+        </div>
+    </article>
+
+    <script>
+        document.getElementById("inviteButton").addEventListener("click", function() {
+            document.getElementById("message").style.display = "block";
+            document.getElementById("inviteButton").style.display = "none";
+            startConfetti();
+        });
+
+        function startConfetti() {
+            for (let i = 0; i < 300; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = Math.random() * window.innerWidth + 'px';
+                confetti.style.animationDuration = 2 + Math.random() * 3 + 's';
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                document.body.appendChild(confetti);
+            }
+        }
+    </script>
+</body>
+</html>

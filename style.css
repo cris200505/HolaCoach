@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#ff69b4;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+#inviteButton {
+    padding: 10px 20px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #642946;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+#fondo{
+    height: 200px;
+    background-image: url('family.jpg');
+    background-size: 200px, 200px;
+    background-repeat: no-repeat;
+}
+
+#message {
+    display: none;
+    font-size: 24px;
+    color: #ff69b4;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.confetti {
+    position: fixed;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    background-color: #ff69b4;
+    opacity: 0.6;
+    border-radius: 50%;
+    animation: confetti-animation 3s linear infinite;
+}
+
+@keyframes confetti-animation {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+    100% { transform: translateY(1000px) rotate(360deg); opacity: 0; }
+}
